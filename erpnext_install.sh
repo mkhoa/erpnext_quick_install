@@ -372,7 +372,7 @@ echo -e "${YELLOW}Now let's set some important parameters...${NC}"
 sleep 1
 echo -e "${YELLOW}We will need your required SQL root password${NC}"
 sleep 1
-dbname=$(ask_one "What is your required Database Name" "true")
+dbname=$(ask_twice "What is your required Database Name" "true")
 echo -e "\n"
 sleep 1
 sqlpasswrd=$(ask_twice "What is your required SQL root password" "true")
