@@ -372,6 +372,9 @@ echo -e "${YELLOW}Now let's set some important parameters...${NC}"
 sleep 1
 echo -e "${YELLOW}We will need your required SQL root password${NC}"
 sleep 1
+dbname=$(ask_one "What is your required Database Name" "true")
+echo -e "\n"
+sleep 1
 sqlpasswrd=$(ask_twice "What is your required SQL root password" "true")
 echo -e "\n"
 sleep 1
@@ -589,6 +592,7 @@ cd frappe-bench && \
 sudo chmod -R o+rx "$(echo $HOME)"
 
 bench new-site "$site_name" \
+  --db-name "$dbname" \
   --db-root-username root \
   --db-root-password "$sqlpasswrd" \
   --admin-password "$adminpasswrd"
